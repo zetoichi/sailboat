@@ -1,14 +1,6 @@
 # SAILBOAT ALERT
 
-With libraries:
-  - requests
-  - BeautifulSoup4
-  - magic
-  - schedule
-  - email
-  - smtplib
-  - csv
-  - os
+With libraries: requests, BeautifulSoup4, magic, schedule, email, smtplib, csv, os
 
 - Searches 'sailboat' in Craiglist over a given list of cities, with some search restrictions.
 - Parses through results and gets info.
