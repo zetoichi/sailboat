@@ -16,19 +16,22 @@ import sailfunc
 import sailmail
 import schedule
 import time
-from secrets import gmail_at, gmail_pass
+from secrets import gmail_at, gmail_pass # secret login variables
 
+# query variables
+sailboat_query = 'sailboat'
 west_coast_cities = ['vancouver', 'seattle', 'sfbay', 'losangeles', 'sandiego']
-sailboat_q = 'sailboat'
 min_price = 8000
 max_price = 20000
 
+# e-mail server variables
 gmail_smtp = 'smtp.gmail.com'
 gmail_port = 465
 sender = gmail_at
 receiver = gmail_at
 password = gmail_pass
 
+# e-mail message variables
 subject = 'SAILBOATS!'
 body = 'These are the sailboats we found for you on Craigslist this week!'
 attachment = '/Users/Zeta/CODE/PROJECTS/PYTHON/SAILBOAT/boat_search.csv'
@@ -43,7 +46,7 @@ def main():
   msg = sailmail.get_message(subject, body, attachment, sender, receiver)
   sailmail.send_mail(gmail_smtp, sender, receiver, password, msg)
 
-
+# schedule to run weekly
 schedule.every().monday.at('10:00').do(main)
 
 while True:
