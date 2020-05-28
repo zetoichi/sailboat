@@ -47,7 +47,7 @@ def main():
   sailmail.send_mail(gmail_smtp, sender, receiver, password, msg)
 
 # schedule to run weekly
-schedule.every().minute.do(main)
+schedule.every().monday.at('10:00').do(main)
 
 while True:
   schedule.run_pending()
