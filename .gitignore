@@ -4,6 +4,10 @@ secrets.py
 # MAC System file
 .DS_Store.*
 
+# VS Code Folder
+.vscode/
+settings.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
