@@ -5,6 +5,7 @@ import email.mime.multipart
 import email.header
 import magic
 from email.mime.text import MIMEText
+from saillog import logger
 
 # return MIME multipart object
 def get_message(message_subject, message_body, message_attachment, sender, receiver):
@@ -32,6 +33,7 @@ def get_message(message_subject, message_body, message_attachment, sender, recei
   return message
 
 # login to mail, send
+@logger
 def send_mail(server, sender, receiver, pwd, message):
   
   # context manager

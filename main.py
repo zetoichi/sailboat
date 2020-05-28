@@ -42,12 +42,12 @@ def main():
 
   search_list = sailfunc.get_big_search(west_coast_cities, sailboat_query, min_price, max_price)
   sailfunc.get_csv_file(search_list)
-
+  
   msg = sailmail.get_message(subject, body, attachment, sender, receiver)
   sailmail.send_mail(gmail_smtp, sender, receiver, password, msg)
 
 # schedule to run weekly
-schedule.every().monday.at('10:00').do(main)
+schedule.every().minute.do(main)
 
 while True:
   schedule.run_pending()

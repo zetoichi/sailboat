@@ -1,6 +1,7 @@
 import requests
-from bs4 import BeautifulSoup
 import csv
+from bs4 import BeautifulSoup
+from saillog import logger
 
 class GetSailboat:
 
@@ -13,6 +14,7 @@ class GetSailboat:
       self.boats_info = self.get_boats_info()
 
   # return search url from city name
+  @logger
   def get_search_url(self):
     head = 'https://'
     tail = '.craigslist.org/search/sss'
@@ -21,6 +23,7 @@ class GetSailboat:
     return url
 
   # return soup object for parsing results (10 results max)
+  @logger
   def get_results(self):
     payload = {
       'query': self.query,
@@ -38,6 +41,7 @@ class GetSailboat:
     return results
 
   # return list of relevant info from soup object
+  @logger
   def get_boats_info(self):
     boats = []
 
@@ -59,6 +63,7 @@ class GetSailboat:
 
 # iterate through list of cities
 # return list of lists of results
+@logger
 def get_big_search(cities, query, min_price=5000, max_price=12000):
   search = []
 
@@ -69,6 +74,7 @@ def get_big_search(cities, query, min_price=5000, max_price=12000):
   return search
 
 # dump list to csv file
+@logger
 def get_csv_file(search_list):
 
   with open('boat_search.csv', 'w') as csv_file:
