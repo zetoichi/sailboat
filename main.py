@@ -12,6 +12,7 @@
 
 - Schedule weekly
 """
+
 import sailfunc
 import sailmail
 import schedule

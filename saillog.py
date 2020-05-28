@@ -1,3 +1,9 @@
+"""
+Basic decorator function that logs when key functions in the program are executed.
+
+CHECK: add a logger specially for exceptions?
+"""
+
 import logging
 from functools import wraps
 
