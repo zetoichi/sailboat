@@ -37,10 +37,10 @@ body = 'These are the sailboats we found for you on Craigslist this week!'
 attachment = '/Users/Zeta/CODE/PROJECTS/PYTHON/SAILBOAT/boat_search.csv'
 
 def main():
-  global west_coast_cities, sailboat_q
+  global west_coast_cities, sailboat_query
   global subject, body, attachment, gmail_smtp, gmail_port, sender, receiver, password, msg
 
-  search_list = sailfunc.get_big_search(west_coast_cities, sailboat_q, min_price, max_price)
+  search_list = sailfunc.get_big_search(west_coast_cities, sailboat_query, min_price, max_price)
   sailfunc.get_csv_file(search_list)
 
   msg = sailmail.get_message(subject, body, attachment, sender, receiver)
