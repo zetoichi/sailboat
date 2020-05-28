@@ -7,3 +7,6 @@ With libraries: requests, BeautifulSoup4, magic, schedule, email, smtplib, csv, 
 - Dumps info to CSV file.
 - Sends e-mail with CSV file attached.
 - Repeats weekly.
+- Keeps log
+
+_* git log will be messy, i was experimenting_
